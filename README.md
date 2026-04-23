@@ -2,6 +2,8 @@
 
 Pre-application hiring-manager outreach pack. Built by Ajay Narasimmamoorthy as a LinkedIn DM artifact.
 
+**Repo:** https://github.com/ajnarasi/paypal-boarding
+
 ## What&rsquo;s here
 
 ```

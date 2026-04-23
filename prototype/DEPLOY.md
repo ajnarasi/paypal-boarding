@@ -79,17 +79,17 @@ cd /Users/ajnarasi/Documents/Work/Projects/APM/PayPal-Merchant-Onboarding/protot
 npx vercel --prod
 ```
 
-## If you want GitHub-triggered auto-deploy
+## GitHub-triggered auto-deploy (recommended — repo is already pushed)
 
-Instead of running `vercel` each time, connect the repo to Vercel via the dashboard:
+The pack is live at **https://github.com/ajnarasi/paypal-boarding**. Connect it to Vercel via the dashboard so every `git push` auto-deploys:
 
 1. https://vercel.com/new
-2. Import from your git provider → select the APM repo.
-3. **Root Directory** → `PayPal-Merchant-Onboarding/prototype` (this is important — the project is nested).
+2. Import from GitHub → select **ajnarasi/paypal-boarding**.
+3. **Root Directory** → `prototype` (this is important — the Next.js app is nested; strategy/panel-review/enterprise/loom docs sit alongside it in the repo).
 4. **Framework preset** → Next.js (auto-detected).
 5. Deploy.
 
-Every `git push` to the main branch then triggers a production deploy; every PR gets a preview URL. Good pattern for this kind of artifact because you can keep iterating on it and the LinkedIn URL stays the same.
+Every push to `main` then triggers a production deploy; every PR gets a preview URL. Good pattern for this kind of artifact because you can keep iterating on it and the LinkedIn URL stays the same.
 
 ## Cost
 
