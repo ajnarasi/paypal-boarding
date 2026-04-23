@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  background: oklch(16% 0.015 250);
+  color: oklch(96% 0.003 250);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Tech-forward ambient glow — a large, soft radial that anchors the hero
+   without animating. Replaces the old paper grain. Compositor-friendly. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(60% 45% at 15% 5%, oklch(28% 0.08 220 / 0.55), transparent 70%),
+    radial-gradient(45% 35% at 95% 0%, oklch(28% 0.07 125 / 0.18), transparent 75%);
+}
+
+/* Selection */
+::selection {
+  background: oklch(74% 0.18 215 / 0.35);
+  color: oklch(96% 0.003 250);
+}
+
+/* Scrollbar — restrained, on dark */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: oklch(30% 0.015 250); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: oklch(40% 0.02 250); }
+
+/* Focus ring — electric cyan */
+:focus-visible {
+  outline: 2px solid oklch(74% 0.18 215);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility — display rule lines with inset */
+.rule-top { border-top: 1px solid oklch(30% 0.015 250); }
+.rule-bottom { border-bottom: 1px solid oklch(30% 0.015 250); }
+
+/* Eyebrow label */
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: oklch(72% 0.008 250);
+}
+
+/* Serif display — tight leading, optical weight */
+.display {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
